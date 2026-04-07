@@ -139,18 +139,76 @@ improvisasi.
 4. Jelaskan perbedaan antara View Cell dan View biasa.  
 5. Ubah View Cell agar hanya menampilkan post dengan kategori tertentu.  
 
-### 1. Data Base menampilkan tanggal :
+# Jawab Pertanyaan :
+
+## 1. Data Base menampilkan tanggal :
 <img width="1617" height="511" alt="image" src="https://github.com/user-attachments/assets/6401d537-36aa-4dfc-84a7-11758de6c9c6" />
 
-### 2. Menambahkan fitur seaech :
+## 2. Menambahkan fitur seaech :
 
 #### Pada Admin :
 
+<img width="1919" height="1031" alt="image" src="https://github.com/user-attachments/assets/a9ac4137-1eb0-4531-8caf-9351d61b6013" />
+
 #### Pada Public :
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/68af522d-8212-4f6f-b0e7-3a0edf4fad14" />
 
+### Menambah fitur Paginasi :
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/adef7810-7fab-43c3-b30d-e0f1ab3f7330" />
 
+## 3. Apa manfaat utama dari penggunaan View Layout dalam pengembangan aplikasi? 
+### 1. Efisiensi dan Kemudahan Maintenance
+Tanpa View Layout, jika kamu ingin mengubah nama menu di header, kamu harus membuka dan mengedit semua file artikel satu per satu. Dengan View Layout, kamu cukup mengubah satu file layout utama, dan seluruh halaman aplikasi akan otomatis berubah.
 
+### 2. Struktur Kode yang Lebih Rapi
+View Layout memisahkan antara kerangka luar (layout) dengan konten spesifik (view). File seperti index.php atau detail.php kamu hanya akan berisi kode yang memang relevan dengan isi artikel saja, tanpa tercampur kode HTML boilerplate yang panjang.
 
+### 3. Konsistensi Tampilan
+Menggunakan layout memastikan bahwa setiap halaman dalam aplikasi kamu memiliki desain, font, dan navigasi yang seragam. Ini memberikan pengalaman pengguna (UX) yang lebih profesional karena tidak ada halaman yang "melompat" atau berbeda desainnya secara tidak sengaja.
 
+## 4. Jelaskan perbedaan antara View Cell dan View biasa.
+### 1. View Biasa
 
+View adalah file presentasi standar yang biasanya dipanggil oleh Controller. View berisi HTML yang membentuk sebagian besar atau seluruh halaman web.
+
+Cara Kerja: Controller memproses data, lalu mengirimkannya ke View menggunakan fungsi return view('nama_file', $data);.
+
+Karakteristik: Tergantung sepenuhnya pada data yang dikirim oleh Controller.
+
+Biasanya merepresentasikan satu halaman penuh (misalnya: halaman daftar artikel atau form edit).
+
+Sulit untuk dipindahkan ke halaman lain jika logic datanya berbeda.
+
+### 2. View Cell
+View Cell adalah komponen tampilan kecil yang mandiri. View Cell tidak dipanggil oleh Controller, melainkan dipanggil langsung dari dalam View lainnya.
+
+Cara Kerja: View Cell memiliki kelas (Class) sendiri yang bertugas mengambil datanya sendiri. Kamu memanggilnya dengan kode <?= view_cell('\App\Cells\NamaCell::display') ?>.
+
+Karakteristik:
+
+Mandiri: Ia bisa mengambil data dari database sendiri tanpa bantuan Controller halaman tersebut.
+
+Reusable (Bisa dipakai ulang): Kamu bisa memasang View Cell "Berita Terpopuler" di halaman Home, halaman Artikel, bahkan halaman Kontak tanpa mengubah kode di Controller mana pun.
+
+Modular: Sangat bagus untuk elemen yang muncul di banyak tempat, seperti sidebar, widget cuaca, atau menu navigasi dinamis.
+
+## 5. -
+
+---  
+# Praktikum 4: Framework Lanjutan (Modul Login)
+
+## Membuat Database User :
+<img width="1615" height="555" alt="image" src="https://github.com/user-attachments/assets/83333643-511f-471c-91d7-d057eca30391" />
+
+## Tampilan Login :
+<img width="1919" height="1029" alt="image" src="https://github.com/user-attachments/assets/2e9519fb-e14b-4ccb-bc5e-1d4da5b98a3d" />
+
+### Jika Tidak Berhasil Login :
+<img width="1917" height="1025" alt="image" src="https://github.com/user-attachments/assets/5db803b7-46ba-4eb0-b4a3-c70b8cce185a" />
+
+### Jika Berhasil Login :
+<img width="1917" height="1026" alt="image" src="https://github.com/user-attachments/assets/a2e22156-99ad-4ea8-b630-7622c1e635f4" />
+
+### Logout :
+<img width="1919" height="1019" alt="image" src="https://github.com/user-attachments/assets/fc7252d7-dd29-41b8-ac61-e45fb6309285" />
 
